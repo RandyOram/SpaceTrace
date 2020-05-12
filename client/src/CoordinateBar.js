@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import './CoordinateBar.css'
 
 class CoordinateBar extends Component {
     constructor(props) {
@@ -14,8 +15,7 @@ class CoordinateBar extends Component {
         return (
             <div className="coordinateBarStyle">
                 <div>
-                    space trace ~ Longitude: {this.props.lng} 
-                        | Latitude: {this.props.lat}
+                    space trace ~ Longitude: {this.props.lng} | Latitude: {this.props.lat}
                 </div>
             </div>
             

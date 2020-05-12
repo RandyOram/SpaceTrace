@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Map.css'
 import mapboxgl from 'mapbox-gl';
 import * as d3 from "d3";
 
