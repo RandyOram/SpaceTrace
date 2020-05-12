@@ -1,6 +1,6 @@
 ## Space Trace
 
-Space Trace is a web application that simply tracks the ISS and displays it's location in real-time.
+Space Trace is a web application that simply tracks the ISS and displays its location in real-time.
 
 ### About This Project
 
