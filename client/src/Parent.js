@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import CoordinateBar from './CoordinateBar.js';
-import LiveFeed from './LiveFeed.js';
-import SideBar from './SideBar.js';
-import Map from './Map.js';
+import CoordinateBar from './Components/CoordinateBar/CoordinateBar.js';
+import LiveFeed from './Components/LiveFeed/LiveFeed.js';
+import SideBar from './Components/SideBar/SideBar.js';
+import Map from './Components/Map/Map.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 

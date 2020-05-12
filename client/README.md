@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Space Trace
 
-## Available Scripts
+Space Trace tracks the international space station as it flies around the world! Its location is tracked in real-time and displayed on a map. Users will be able to create a simple account and provide their location and phone number to receive texts when the ISS is about to fly over their region!
 
-In the project directory, you can run:
+### Why this project?
 
-### `yarn start`
+I recently visited Big Bend National Park in Texas and was in awe over how dark the sky was - I'd never seen anything quite like it. I could see more stars in one night than I'd ever seen before. There were also very few planes out there (it's truly in the middle of nowhere!), so when I saw something plane-like flying through the sky one night, I wondered if it was the ISS.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I couldn't figure it out then due to a lack of internet connection, so I had the thought that I'd create an app that alerts me via SMS whenever the ISS is about to fly overhead!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+In terms of my technical aspirations, I decided to pursue Space Trace out of a desire to learn web development and hone my software engineering skills.
 
-### `yarn test`
+### Technologies leveraged (so far)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
 
-### `yarn build`
+React seemed like the go-to front-end framework to learn right now. I'm finding it very intuitive to create responsive front-ends. I particularly love the conditional rendering that React offers.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Bootstrap
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+CSS has always been a pain for me (look at randyoram.com for an example of my first web development project - vanilla HTML and JS). I found positioning things to be very painful and all around discouraging. I made it a point in this project to learn how to use Bootstrap's grid system - and I've learned it well!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Firebase
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I chose to use Firebase for my back-end and hosting. I'm still in the process of setting this up.
