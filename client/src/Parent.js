@@ -33,20 +33,20 @@ class Parent extends Component {
                 <div className="no-pointer-events container-fluid fullHeight">
                     <div className="row fullHeight">
 
-                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div id="content-desktop" className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                             <div className="row test">
                                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <CoordinateBar lng={this.state.lng} lat={this.state.lat} />
                                 </div>
                             </div>
-                            <div id="content-desktop" className="row test">
+                            <div className="row test">
                                 <div className="componentContainer">
                                     <LiveFeed />
                                 </div>
                             </div>
                         </div>
                         
-                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                             <SideBar />
                         </div>
                     </div>

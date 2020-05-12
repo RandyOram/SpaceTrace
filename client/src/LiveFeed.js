@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import './LiveFeed.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilm, faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
 

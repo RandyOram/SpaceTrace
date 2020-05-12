@@ -1,0 +1,11 @@
+.coordinateBarStyle {
+    font-family: 'Inconsolata', monospace;
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 1px;
+}
