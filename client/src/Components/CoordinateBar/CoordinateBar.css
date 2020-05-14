@@ -1,4 +1,4 @@
-.coordinateBarStyle {
+.coordinate-bar-style {
     font-family: 'Inconsolata', monospace;
     display: inline-block;
     margin-top: 15px;
@@ -7,5 +7,9 @@
     z-index: 1 !important;
     padding: 6px;
     font-weight: bold;
-    border-radius: 1px;
+    border-radius: 20px;
+}
+
+.coordinate-bar-text {
+    padding: 10px;
 }
