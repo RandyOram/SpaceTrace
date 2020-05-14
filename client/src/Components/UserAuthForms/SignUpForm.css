@@ -1,0 +1,28 @@
+.login-form {
+    pointer-events: auto !important;
+}
+
+.login-form input {
+    border-radius: 10px;
+}
+
+.btn-signin {
+    background-color: #3399FF !important;
+    border-width: 0 !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    opacity: 100 !important;
+}
+
+.input-group-text {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2% !important;
+    width: 100%;
+}
+
+.signin-btn-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}

@@ -16,7 +16,7 @@
     top: 0;
     margin-top: 12px;
     margin-bottom: 12px;
-    border-radius: 1px;
+    border-radius: 20px;
     /* animation: toggleMenu 500ms linear 0s 1 alternate; */
 }
 
@@ -27,6 +27,13 @@
     right: 0;
     top: 0;
     margin-top: 12px;
+    border-radius: 15px !important;
+}
+
+.sideBar-button-size {
+    font-size: 45px;
+    padding-top: 7px !important;
+    padding: 5px;
 }
 
 .menu-close {
@@ -68,4 +75,12 @@
     color: #ffffff;
     font-weight: 100;
     font-size: xx-large;
+}
+
+.menu-credit {
+    font-family: 'Inconsolata', monospace;
+    padding-left: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: xx-small;
 }

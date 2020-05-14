@@ -13,8 +13,8 @@ class CoordinateBar extends Component {
 
     render() {
         return (
-            <div className="coordinateBarStyle">
-                <div>
+            <div className="coordinate-bar-style">
+                <div className="coordinate-bar-text">
                     space trace ~ Longitude: {this.props.lng} | Latitude: {this.props.lat}
                 </div>
             </div>

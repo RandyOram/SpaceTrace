@@ -23,3 +23,7 @@ CSS has always been a pain for me (look at randyoram.com for an example of my fi
 - Firebase
 
 I chose to use Firebase for my back-end and hosting. I'm still in the process of setting this up.
+
+### Things I've learned
+
+- I really developed this out of order. I wish I had set up a proper CICD pipeline, hosting with Firebase, etc. I did this once my interface was almost finished. I think a lot of the reason for this mistake is that I just wanted to jump in and start developing - but I realize now that a little time up front would have saved me from a lot of time later.

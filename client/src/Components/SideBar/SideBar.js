@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './SideBar.css';
+import SignUpForm from '../UserAuthForms/SignUpForm.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { Button, Nav, NavItem } from 'react-bootstrap'
@@ -35,7 +36,7 @@ export default class SideBar extends Component {
                 {
                     !buttonPressed && (
                         <button className="btn btn-primary btn-lg sideBarButton" onClick={this.showSideBar}>
-                            <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+                            <FontAwesomeIcon className="sideBar-button-size" icon={faBars}></FontAwesomeIcon>
                         </button>
                     )
                 }
@@ -54,6 +55,9 @@ export default class SideBar extends Component {
                                             <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
                                         </div>
                                     </div>
+                                </div>
+                                <div className="menu-credit row">
+                                    data obtained from http://open-notify.org/
                                 </div>
                                 <div className="login row" onClick={this.triggerLoginDropdown}>
                                     <div>
@@ -81,7 +85,7 @@ export default class SideBar extends Component {
                                 {
                                     loginPressed && (
                                         <div className="row">
-                                            Test
+                                            <SignUpForm />
                                         </div>
                                     )
                                 }
