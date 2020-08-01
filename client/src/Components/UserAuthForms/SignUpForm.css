@@ -26,3 +26,13 @@
     justify-content: space-around;
     width: 100%;
 }
+
+.error {
+    font-family: 'Inconsolata', monospace;
+    color: #C14242;
+    padding-top: 6px;
+    font-weight: 900;
+    font-size: medium;
+    margin: 0 auto;
+    text-align: center;
+}

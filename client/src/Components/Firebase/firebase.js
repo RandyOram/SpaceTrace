@@ -2,15 +2,15 @@ import app from 'firebase/app'
 import auth from 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrFINpmRYbewGwfGER3S3lsaqEmWpK1F4",
-    authDomain: "space-trace-277015.firebaseapp.com",
-    databaseURL: "https://space-trace-277015.firebaseio.com",
-    projectId: "space-trace-277015",
-    storageBucket: "space-trace-277015.appspot.com",
-    messagingSenderId: "1043632187016",
-    appId: "1:1043632187016:web:705059ad81a8bd1731e13d",
-    measurementId: "G-BC4LEK6Y31"
-};
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
+}
 
 class Firebase {
     constructor() {

@@ -19,7 +19,18 @@ class SignUpForm extends Component {
     }
 
     onSubmit = event => {
-
+        const { username, email, passwordOne } = this.state;
+     
+        this.props.firebase
+            .createUser(email, passwordOne)
+            .then(authUser => {
+                this.setState({ ...INITIAL_STATE });
+            })
+            .catch(error => {
+                this.setState({ error });
+            });
+     
+        event.preventDefault();
     };
 
     onChange = event => {
@@ -76,11 +87,11 @@ class SignUpForm extends Component {
                     placeholder="Confirm Password"
                 />
                 <div className="signin-btn-container">
-                    <button className="btn btn-signin" disabled={isInvalid} type="submit">
+                    <button className="btn btn-signin" disabled={isInvalid} type="submit" onSubmit={this.onSubmit}>
                         Sign Up
                     </button>
                 </div>
-                {error && <p>{error.message}</p>}
+                {error && <div className="error">{error.message}</div>}
             </form>
         )
     }
