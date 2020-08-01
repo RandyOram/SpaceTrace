@@ -8,6 +8,9 @@
     padding: 6px;
     font-weight: bold;
     border-radius: 20px;
+    border-color: rgba(255,255,255,0.25) !important;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .coordinate-bar-text {

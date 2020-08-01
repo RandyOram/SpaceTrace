@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { FirebaseContext } from './Components/Firebase/index.js'
 import CoordinateBar from './Components/CoordinateBar/CoordinateBar.js';
 import LiveFeed from './Components/LiveFeed/LiveFeed.js';
 import SideBar from './Components/SideBar/SideBar.js';
@@ -47,7 +48,9 @@ class Parent extends Component {
                         </div>
                         
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                            <SideBar />
+                            <FirebaseContext.Consumer>
+                                { firebase => <SideBar firebase={firebase} /> }
+                            </FirebaseContext.Consumer>
                         </div>
                     </div>
                 </div>

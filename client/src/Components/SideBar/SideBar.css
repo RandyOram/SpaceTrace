@@ -1,3 +1,9 @@
+/* 
+* Colors:
+* White: #ffffff;
+* Grey:  #404040;
+*/
+
 .sideBarContainer {
     position: relative;
     top: 0;
@@ -17,7 +23,9 @@
     margin-top: 12px;
     margin-bottom: 12px;
     border-radius: 20px;
-    /* animation: toggleMenu 500ms linear 0s 1 alternate; */
+    border-color: rgba(255,255,255,0.25) !important;
+    border: 3px;
+    border-style: solid;
 }
 
 .sideBarButton {
@@ -28,6 +36,12 @@
     top: 0;
     margin-top: 12px;
     border-radius: 15px !important;
+    border: 3px !important;
+    border-style: solid !important;
+}
+
+.btn-primary {
+    border-color: rgba(255,255,255,0.25) !important;
 }
 
 .sideBar-button-size {
@@ -48,11 +62,6 @@
     cursor: pointer;
 }
 
-.login {
-    pointer-events: auto !important;
-    cursor: pointer;
-}
-
 .menu-title {
     font-family: 'Inconsolata', monospace;
     color: #ffffff;
@@ -61,13 +70,18 @@
     font-size: xx-large;
 }
 
-.menu-login-title {
+.menu-logout-title {
     font-family: 'Inconsolata', monospace;
     color: #ffffff;
     padding-top: 6px;
     font-weight: 500;
-    font-size: x-large;
+    font-size: medium;
     padding-left: 20px;
+}
+
+.menu-logout-title:hover {
+    border-bottom: 2px;
+    color: #ffffff;
 }
 
 .menu-login-caret {
@@ -83,4 +97,35 @@
     color: #ffffff;
     font-weight: 700;
     font-size: xx-small;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.login-switch {
+    pointer-events: auto !important;
+    cursor: pointer;
+    font-family: 'Inconsolata', monospace;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 6px;
+    font-weight: 250;
+    font-size: medium;
+}
+
+.left-right-space {
+    margin-left:7px;
+    margin-right:7px;
+}
+
+.left-space {
+    margin-left:25px;
+}
+
+.active {
+    color: #ffffff !important;
+}
+
+.logout {
+    pointer-events: auto !important;
 }

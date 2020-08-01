@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl'
 import './index.css'
 import Parent from './Parent.js'
 import Firebase, { FirebaseContext } from './Components/Firebase/index.js'
+require('dotenv').config()
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZHlvcmFtIiwiYSI6ImNrNjFhOHp5MDAwYWEzZW1tNG03MW5oMjkifQ.s-mh2kWUPhtPQRrXesmdrQ';
 

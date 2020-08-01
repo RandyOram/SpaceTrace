@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import './SideBar.css';
+import './SideBar.css'
+import { FirebaseContext } from '../Firebase/index.js'
 import SignUpForm from '../UserAuthForms/SignUpForm.js'
+import SignInForm from '../UserAuthForms/SignInForm.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
-import { Button, Nav, NavItem } from 'react-bootstrap'
+import styled from 'styled-components'
 
 export default class SideBar extends Component {
     constructor(props) {
@@ -11,11 +13,32 @@ export default class SideBar extends Component {
  
         this.state = {
             buttonPressed: false,
-            loginPressed: false
+            loginPressed: false,
+            userLoggedIn: false
         };
 
         this.showSideBar = this.showSideBar.bind(this);
-        this.triggerLoginDropdown = this.triggerLoginDropdown.bind(this);
+        this.toggleLoginSwitch = this.toggleLoginSwitch.bind(this);
+        this.signOut = this.signOut.bind(this);
+        //this.triggerLoginDropdown = this.triggerLoginDropdown.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.firebase.auth.onAuthStateChanged(function(user) {
+            if (user) {
+                this.setState({ userLoggedIn: true });
+            } else {
+                this.setState({ userLoggedIn: false });
+            }
+          }.bind(this));
+    }
+
+    signOut() {
+        this.props.firebase
+            .signOut()
+            .catch(error => {
+                this.setState({ error });
+        });
     }
     
     showSideBar () {
@@ -23,13 +46,25 @@ export default class SideBar extends Component {
         this.forceUpdate();
     }
 
-    triggerLoginDropdown () {
+    toggleLoginSwitch () {
         this.setState({ loginPressed: !this.state.loginPressed });
         this.forceUpdate();
     }
 
+    /*triggerLoginDropdown () {
+        this.setState({ loginPressed: !this.state.loginPressed });
+        this.forceUpdate();
+    }*/
+
     render() {
-        let { buttonPressed, loginPressed } = this.state;
+        let { buttonPressed, loginPressed, userLoggedIn } = this.state;
+
+        const HoverText = styled.div`
+                :hover {
+                    color: rgba(255, 255, 255, 0.5);
+                    cursor: pointer;
+            }
+        `
 
         return (
             <div className="sideBarContainer">
@@ -59,7 +94,7 @@ export default class SideBar extends Component {
                                 <div className="menu-credit row">
                                     data obtained from http://open-notify.org/
                                 </div>
-                                <div className="login row" onClick={this.triggerLoginDropdown}>
+                                {/*<div className="login row" onClick={this.triggerLoginDropdown}>
                                     <div>
                                         {
                                             !loginPressed && (
@@ -81,11 +116,48 @@ export default class SideBar extends Component {
                                             log in
                                         </div>
                                     </div>
-                                </div>
+                                </div>*/}
                                 {
-                                    loginPressed && (
-                                        <div className="row">
-                                            <SignUpForm />
+                                    !userLoggedIn && (
+                                        <div>
+                                            <div className="row">
+                                                <div className={`login-switch left-space ${!loginPressed ? "active" : ""}`} onClick={this.toggleLoginSwitch}>
+                                                    create account
+                                                </div>
+                                                <div className='login-switch left-right-space'>
+                                                    or
+                                                </div>
+                                                <div className={`login-switch ${loginPressed ? "active" : ""}`} onClick={this.toggleLoginSwitch}>
+                                                    log in
+                                                </div>
+                                            </div>
+                                            {
+                                                loginPressed && (
+                                                    <div className="row top-buffer">
+                                                        <FirebaseContext.Consumer>
+                                                            { firebase => <SignInForm firebase={firebase} /> }
+                                                        </FirebaseContext.Consumer>
+                                                    </div>
+                                                )
+                                            }
+                                            {
+                                                !loginPressed && (
+                                                    <div className="row top-buffer">
+                                                        <FirebaseContext.Consumer>
+                                                            { firebase => <SignUpForm firebase={firebase} /> }
+                                                        </FirebaseContext.Consumer>
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
+                                    )
+                                }
+                                {
+                                    userLoggedIn && (
+                                        <div className="row top-buffer logout" onClick={this.signOut}>
+                                            <HoverText className="menu-logout-title">
+                                                log out
+                                            </HoverText>
                                         </div>
                                     )
                                 }
