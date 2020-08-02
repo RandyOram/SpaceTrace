@@ -21,6 +21,13 @@
     width: 100%;
 }
 
+.input-group-check {
+    margin-top: 2%;
+    margin-left: 6%;
+    margin-right: 5%;
+    margin-bottom: 2% !important;
+}
+
 .signin-btn-container {
     display: flex;
     justify-content: space-around;
@@ -35,4 +42,17 @@
     font-size: medium;
     margin: 0 auto;
     text-align: center;
+}
+
+.permission-container {
+    display: flex;
+    width: 100%;
+}
+
+.permission-text {
+    font-family: 'Inconsolata', monospace;
+    color: #ffffff;
+    padding-top: 6px;
+    font-weight: 200;
+    font-size: x-small;
 }
