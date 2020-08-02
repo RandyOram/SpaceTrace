@@ -1,5 +1,7 @@
-import app from 'firebase/app'
+import app, { firestore } from 'firebase/app'
 import auth from 'firebase/auth'
+import 'firebase/database'
+import 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -17,12 +19,26 @@ class Firebase {
         app.initializeApp(firebaseConfig);
 
         this.auth = app.auth();
+        this.db = app.database();
+        this.firestore = app.firestore();
     }
 
     /* Authentication */
 
-    createUser = (email, password) => 
-        this.auth.createUserWithEmailAndPassword(email, password);
+    createUser = (email, password, name, phone, receiveSMS, receiveEmail, location) => {
+        return this.auth.createUserWithEmailAndPassword(email, password)
+        .then(registeredUser => {
+            this.firestore.collection("users")
+            .add({
+                uid: registeredUser.user.uid,
+                mapTheme: "default",
+                receiveEmail: "true",
+                receiveSMS: "false",
+                location: new firestore.GeoPoint(0.0,0.0)
+            })
+            return registeredUser
+        })
+    }
 
     signIn = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
