@@ -3,6 +3,9 @@
 import React, { Component } from 'react'
 import './SignUpForm.css'
 import Loading from '../Loading/Loading.js'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import { useForm } from 'react-hook-form'
 
 const INITIAL_STATE = {
     name: '',
@@ -11,7 +14,11 @@ const INITIAL_STATE = {
     passwordTwo: '',
     error: null,
     waiting: false,
-    notify: false
+    notify: false,
+    latitude: 0.0,
+    longitude: 0.0,
+    phone: '',
+    coordWaiting: false
 };
 
 class SignUpForm extends Component {
@@ -20,16 +27,18 @@ class SignUpForm extends Component {
  
         this.state = { ...INITIAL_STATE };
         this.toggleWait = this.toggleWait.bind(this)
+        this.toggleCoordWait = this.toggleCoordWait.bind(this)
         this.toggleNotify = this.toggleNotify.bind(this)
+        this.getLocation = this.getLocation.bind(this)
     }
 
     onSubmit = event => {
-        const { name, email, passwordOne } = this.state;
-     
+        const { email, passwordOne, name, phone, notify, latitude, longitude } = this.state;
+
         this.toggleWait()
 
         this.props.firebase
-            .createUser(email, passwordOne)
+            .createUser(email, passwordOne, name, phone, notify, notify, latitude, longitude)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
                 this.toggleWait()
@@ -50,11 +59,29 @@ class SignUpForm extends Component {
         this.setState({ waiting: !this.state.waiting })
     };
 
+    toggleCoordWait() {
+        this.setState({ coordWaiting: !this.state.coordWaiting })
+    };
+
     toggleNotify() {
         this.setState({ notify: !this.state.notify })
     };
 
+    getLocation() {
+        this.toggleCoordWait();
+        if (window.navigator.geolocation) {
+            window.navigator.geolocation
+                .getCurrentPosition((location) => {
+                    console.log(location)
+                    this.setState({ latitude: location.coords.latitude, longitude: location.coords.longitude });
+                    this.toggleCoordWait();
+                }, console.log);
+        }
+    };
+
     render() {
+        const { register, handleSubmit, watch, errors } = useForm();
+
         const {
             name,
             email,
@@ -62,7 +89,11 @@ class SignUpForm extends Component {
             passwordTwo,
             error,
             waiting,
-            notify
+            notify,
+            latitude,
+            longitude,
+            coordWaiting,
+            phone
         } = this.state;
 
         const isInvalid =
@@ -83,6 +114,7 @@ class SignUpForm extends Component {
                                 onChange={this.onChange}
                                 type="text"
                                 placeholder="First Name"
+                                ref={register({required: true})}
                             />
                             <input
                                 className="input-group-text"
@@ -91,6 +123,7 @@ class SignUpForm extends Component {
                                 onChange={this.onChange}
                                 type="text"
                                 placeholder="Email Address"
+                                ref={register({required: true})}
                             />
                             <input
                                 className="input-group-text"
@@ -99,6 +132,7 @@ class SignUpForm extends Component {
                                 onChange={this.onChange}
                                 type="password"
                                 placeholder="Password"
+                                ref={register({required: true})}
                             />
                             <input
                                 className="input-group-text"
@@ -107,6 +141,7 @@ class SignUpForm extends Component {
                                 onChange={this.onChange}
                                 type="password"
                                 placeholder="Confirm Password"
+                                ref={register({required: true})}
                             />
                             <div className="permission-container">
                                 <input
@@ -124,12 +159,57 @@ class SignUpForm extends Component {
                             </div>
                             {
                                 notify && (
-                                    <div>
-                                        HELLO
+                                    <div className="extra-fields-container">
+                                        <div className="btn-container">
+                                            <button className="btn btn-light" disabled={!notify} type="button" onClick={this.getLocation}>
+                                                Share Location
+                                            </button>
+                                        </div>
+                                        {
+                                            !coordWaiting && (
+                                                <div className="lat-long-container">
+                                                    <input
+                                                        className="input-group-text"
+                                                        name="latitude"
+                                                        value={latitude}
+                                                        type="text"
+                                                        placeholder="Latitude"
+                                                        disabled={true}
+                                                    />
+                                                    <input
+                                                        className="input-group-text"
+                                                        name="longitude"
+                                                        value={longitude}
+                                                        type="text"
+                                                        placeholder="Longitude"
+                                                        disabled={true}
+                                                    />
+                                                </div>
+                                            )
+                                        }
+                                        {
+                                            coordWaiting && (
+                                                <div className="center top-space">
+                                                    <Loading />
+                                                </div>
+                                            )
+                                        }
                                     </div>
                                 )
                             }
-                            <div className="signin-btn-container">
+                            {
+                                notify && (
+                                    <div className="phone-input-container">
+                                        <PhoneInput
+                                            country={'us'}
+                                            onlyCountries={['us']}
+                                            value={this.state.phone}
+                                            onChange={phone => this.setState({ phone })}
+                                        />
+                                    </div>
+                                )
+                            }
+                            <div className="btn-container">
                                 <button className="btn btn-signin" disabled={isInvalid} type="submit" onSubmit={this.onSubmit}>
                                     Sign Up
                                 </button>

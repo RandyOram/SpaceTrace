@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './SideBar.css'
 import { FirebaseContext } from '../Firebase/index.js'
 import SignUpForm from '../UserAuthForms/SignUpForm.js'
+import SignUpForm2 from '../UserAuthForms/SignUpForm2.js'
 import SignInForm from '../UserAuthForms/SignInForm.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
@@ -144,7 +145,7 @@ export default class SideBar extends Component {
                                                 !loginPressed && (
                                                     <div className="row top-buffer">
                                                         <FirebaseContext.Consumer>
-                                                            { firebase => <SignUpForm firebase={firebase} /> }
+                                                            { firebase => <SignUpForm2 firebase={firebase} /> }
                                                         </FirebaseContext.Consumer>
                                                     </div>
                                                 )

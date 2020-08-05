@@ -25,16 +25,18 @@ class Firebase {
 
     /* Authentication */
 
-    createUser = (email, password, name, phone, receiveSMS, receiveEmail, location) => {
+    createUser = (email, password, name, phone, receiveSMS, receiveEmail, latitude, longitude) => {
         return this.auth.createUserWithEmailAndPassword(email, password)
         .then(registeredUser => {
             this.firestore.collection("users")
             .add({
                 uid: registeredUser.user.uid,
                 mapTheme: "default",
-                receiveEmail: "true",
-                receiveSMS: "false",
-                location: new firestore.GeoPoint(0.0,0.0)
+                name: name,
+                receiveEmail: receiveSMS,
+                receiveSMS: receiveEmail,
+                phoneNum: phone,
+                location: new firestore.GeoPoint(latitude,longitude)
             })
             return registeredUser
         })
