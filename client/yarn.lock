@@ -6887,15 +6887,30 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.reduce@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.reduce/-/lodash.reduce-4.6.0.tgz#f1ab6b839299ad48f784abbf476596f03b914d3b"
+  integrity sha1-8atrg5KZrUj3hKu/R2WW8DuRTTs=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
+
+lodash.startswith@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/lodash.startswith/-/lodash.startswith-4.2.1.tgz#c598c4adce188a27e53145731cdc6c0e7177600c"
+  integrity sha1-xZjErc4YiiflMUVzHNxsDnF3YAw=
 
 lodash.template@^4.4.0, lodash.template@^4.5.0:
   version "4.5.0"
@@ -9213,6 +9228,11 @@ react-fade-in@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-1.1.0.tgz#82272eba4ae5843fed333e2c7f74dc5dbdab3864"
   integrity sha512-sR36bwyimCRapcHEuEjbQkQzUuCh3BIOeQvrUc9X4HBN6nswZ3nuq1Zb0vh3lG1Xx2ZMduGMw8u4AwNGbHkI0g==
 
+react-hook-form@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.3.0.tgz#5c1926d51d4532f44818ef73f96d1a8c11015a76"
+  integrity sha512-Xz7xxnILftxttc6H+miTSi2eYPehiW3XdsPaqY5dW8HcURFZPrnpxnmaRqz6JtZcbfRM8qjjppP/pOBaUzhn4w==
+
 react-icons@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.9.0.tgz#89a00f20a0e02e6bfd899977eaf46eb4624239d5"
@@ -9260,6 +9280,18 @@ react-overlays@^2.1.0:
     prop-types "^15.7.2"
     uncontrollable "^7.0.0"
     warning "^4.0.3"
+
+react-phone-input-2@^2.13.7:
+  version "2.13.7"
+  resolved "https://registry.yarnpkg.com/react-phone-input-2/-/react-phone-input-2-2.13.7.tgz#fa8f1cf51ca52d6a150e2fc6e335160d83e200f9"
+  integrity sha512-CeDla+8o25strPFwb1gelTHkCTnJMt9DrGxNikE0krBf9nsPLxiQ30irOY0IXBk0FcVYlnJ99SGCH51cc2/rxA==
+  dependencies:
+    classnames "^2.2.6"
+    lodash.debounce "^4.0.8"
+    lodash.memoize "^4.1.2"
+    lodash.reduce "^4.6.0"
+    lodash.startswith "^4.2.1"
+    prop-types "^15.7.2"
 
 react-scripts@3.3.0:
   version "3.3.0"
