@@ -29,6 +29,10 @@
     box-shadow: 2px 2px 10px 2px black
 }
 
+.set-height {
+    height: 'calc(100% - 1px)'
+}
+
 .sideBarButton {
     pointer-events: auto !important;
     background-color: #404040;

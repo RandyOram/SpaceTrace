@@ -79,7 +79,7 @@ export default class SideBar extends Component {
                 
                 {
                     buttonPressed && (
-                        <div className="sideBar col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div className="sideBar col-xl-6 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                                 <div className="row">
                                     <div className="col-10">
                                         <span className="menu-title">
@@ -120,7 +120,7 @@ export default class SideBar extends Component {
                                 </div>*/}
                                 {
                                     !userLoggedIn && (
-                                        <div>
+                                        <div className="set-height">
                                             <div className="row">
                                                 <div className={`login-switch left-space ${!loginPressed ? "active" : ""}`} onClick={this.toggleLoginSwitch}>
                                                     create account
