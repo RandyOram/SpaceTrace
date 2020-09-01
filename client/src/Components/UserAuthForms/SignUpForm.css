@@ -1,5 +1,7 @@
 .login-form {
     pointer-events: auto !important;
+    max-height: 450px;
+    overflow: scroll;
 }
 
 .login-form input {
@@ -25,24 +27,29 @@
 }
 
 .input-group-text {
-    margin-left: 5%;
+    margin-left: 5% !important;
     margin-right: 5%;
-    margin-bottom: 2% !important;
+    margin-bottom: 10px !important;
     width: 100%;
 }
 
+.form-control {
+    border-radius: 10px !important;
+    flex: 0 1 auto !important;
+}
+
 .input-group-check {
-    margin-top: 2%;
+    margin-top: 10px;
     margin-left: 6%;
     margin-right: 5%;
-    margin-bottom: 2% !important;
+    margin-bottom: 10px !important;
 }
 
 .btn-container {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 3% !important;
+    margin-bottom: 10px !important;
 }
 
 .extra-fields-container {
@@ -60,7 +67,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 10px;
 }
 
 .react-tel-input {
@@ -97,8 +104,69 @@
     justify-content: center;
 }
 
+.center-relative {
+    display: flex;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
 .top-space {
     position: absolute;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+.loading {
+    display: flex;
+}
+
+.height-buffer {
+    height: 75px;
+}
+
+.wrapper {
+    display: contents;
+}
+
+.error-text {
+    margin-bottom: 2%;
+    font-family: 'Inconsolata', monospace;
+    color: red;
+    font-weight: 200;
+    font-size: small;
+}
+
+.requirements-text {
+    font-family: 'Inconsolata', monospace;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: x-small;
+}
+
+.requirements-text-error {
+    color: red !important;
+}
+
+.requirements-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.error-location {
+    margin-bottom: 10px;
+}
+
+.flag-dropdown {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
 }

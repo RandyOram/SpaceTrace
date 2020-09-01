@@ -25,7 +25,7 @@ class Firebase {
 
     /* Authentication */
 
-    createUser = (email, password, name, phone, receiveSMS, receiveEmail, latitude, longitude) => {
+    createUser = (email, password, name, phone, receiveNotifications, latitude, longitude) => {
         return this.auth.createUserWithEmailAndPassword(email, password)
         .then(registeredUser => {
             this.firestore.collection("users")
@@ -33,8 +33,7 @@ class Firebase {
                 uid: registeredUser.user.uid,
                 mapTheme: "default",
                 name: name,
-                receiveEmail: receiveSMS,
-                receiveSMS: receiveEmail,
+                receiveNotifications: receiveNotifications,
                 phoneNum: phone,
                 location: new firestore.GeoPoint(latitude,longitude)
             })
